@@ -12,7 +12,7 @@ DoT tracker — so you can react to incoming DK pressure without parsing combat 
 | **Title** | AntiDK2 |
 | **Display name** | Anti DK 2.0 |
 | **Author** | Vixen Hunny |
-| **Add-on version** | 1.5 (manifest) / 1.2 (`AntiDK.version` in code) |
+| **Add-on version** | 1.5 (`## AddOnVersion` in the manifest and `ADK.version` in code) |
 | **API version** | 101049 |
 | **Dependency** | [LibAddonMenu-2.0](https://www.esoui.com/downloads/info7-LibAddonMenu.html) |
 | **Saved variables** | `AntiDK2_SavedVars` (per-character) |
@@ -74,7 +74,9 @@ All settings persist per-character in `AntiDK2_SavedVars`; defaults live in `ADK
 ```
 AntiDK2.addon              Add-on manifest (metadata, load order, dependencies)
 src/
-  AntiDK2.lua               Namespace bootstrap: ability IDs, color palette, saved-var defaults
+  AntiDK2.lua               Namespace bootstrap: metadata, ability IDs, colour palette (ADK.Colorize),
+                            fonts (ADK.Font / ADK.PresetFont), window registry (ADK.WINDOWS),
+                            saved-var defaults (ADK.Get) and shared helpers (ADK.IsPlayer, ADK.Msg)
   Run.lua                   Entry point: EVENT_ADD_ON_LOADED handler, wires up UI + events
   Config/
     Settings.lua            LibAddonMenu-2.0 settings panel definition
